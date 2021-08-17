@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/pjlsergeant/dumb-json-api-response-envelope/schema/v0.0.1.json",
+  "title": "Dumb JSON API Response Envelope",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/success"
+    },
+    {
+      "$ref": "#/definitions/failure"
+    }
+  ],
+  "definitions": {
+    "success": {
+      "$comment": "Response received from a successful API call",
+      "type": "object",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "properties": {
+        "data": {},
+        "meta": {
+          "$ref": "#/definitions/meta"
+        }
+      },
+      "additionalProperties": false
+    },
+    "failure": {
+      "$comment": "Response received from a failed API call",
+      "type": "object",
+      "required": [
+        "meta",
+        "error"
+      ],
+      "properties": {
+        "error": {
+          "$ref": "#/definitions/error"
+        },
+        "meta": {
+          "$ref": "#/definitions/meta"
+        }
+      },
+      "additionalProperties": false
+    },
+    "meta": {
+      "$comment": "Every document needs one of these",
+      "type": "object",
+      "required": [
+        "version",
+        "from"
+      ],
+      "properties": {
+        "version": {
+          "$ref": "#/definitions/semver"
+        },
+        "from": {
+          "type": "string"
+        },
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "trace": {}
+      },
+      "additionalProperties": false
+    },
+    "error": {
+      "$comment": "Structured error",
+      "type": "object",
+      "required": [
+        "title"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "trace": {}
+      },
+      "additionalProperties": false
+    },
+    "semver": {
+      "$comment": "https://github.com/microsoft/json-schemas/blob/master/spfx/semver.schema.json",
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 14,
+      "pattern": "^(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)$"
+    }
+  }
+}

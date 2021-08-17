@@ -1,0 +1,9 @@
+{
+    "meta": {
+        "version": "0.0.1",
+        "from": "myapi.com/coefficiants"
+    },
+    "error": {
+        "title": "Invalid payload provided"
+    }
+}

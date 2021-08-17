@@ -1,0 +1,13 @@
+{
+    "meta": {
+        "version": "0.0.1",
+        "from": "myapi.com/coefficiants",
+        "timestamp": "2020-12-09 16:09:53+00:00"
+    },
+    "data": [
+        "this",
+        "is",
+        "my",
+        "payload"
+    ]
+}

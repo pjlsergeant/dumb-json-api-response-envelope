@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "version": "0.0.1",
+    "from": "myapi.com/coefficiants",
+    "timestamp": "2020-12-09 16:09:53+00:00"
+  },
+  "error": {
+    "title": "Invalid payload provided",
+    "code": "BADPAYLOAD",
+    "detail": "Value at [/error/title]: expected[string] actual[array]",
+    "id": "10.10.3.59:453294281",
+    "trace": [
+      {
+        "instancePath": "/error/title",
+        "schemaPath": "#/definitions/error/properties/title/type",
+        "keyword": "type",
+        "params": {
+          "type": "string"
+        },
+        "message": "must be string"
+      }
+    ]
+  }
+}

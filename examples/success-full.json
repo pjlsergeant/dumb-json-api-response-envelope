@@ -1,0 +1,32 @@
+{
+    "meta": {
+        "version": "0.1.0",
+        "from": "rescue.int/launch/machines#POST",
+        "timestamp": "2020-12-09 16:09:53+00:00",
+        "schema": "https://rescue.int/schemas/launch/machines/response.json",
+        "trace": {
+            "_comment": "don't stick too much stuff in trace, see the docs",
+            "request-id": "X-deadbeef"
+        }
+    },
+    "data": {
+        "machines": [
+            {
+                "id": "thunderbird-1",
+                "status": "go",
+                "pilot": {
+                    "username": "scott.tracy",
+                    "comment": "FAB"
+                }
+            },
+            {
+                "id": "thunderbird-4",
+                "status": "go",
+                "pilot": {
+                    "username": "gordon.tracy",
+                    "comment": "FAB"
+                }
+            }
+        ]
+    }
+}
